@@ -22,7 +22,7 @@ const Missing_Image="https://tinyurl.com/tv-missing";
 async function searchShows(query) {
   // TODO: Make an ajax request to the searchShows api.  Remove
   // hard coded data.
-let res=await axios.get(`http://api.tvmaze.com/search/shows?q=${query}`)
+let res=await axios.get(`https://api.tvmaze.com/search/shows?q=${query}`)
 let shows= res.data.map(result=>{
   let show=result.show;
   return{
@@ -94,7 +94,7 @@ async function getEpisodes(id) {
   //       http://api.tvmaze.com/shows/SHOW-ID-HERE/episodes
 
   // TODO: return array-of-episode-info, as described in docstring above
-  let res= await axios(`http://api.tvmaze.com/shows/${id}/episodes`);
+  let res= await axios(`https://api.tvmaze.com/shows/${id}/episodes`);
   let episodes= res.data.map(result =>({
     id: result.id,
     name: result.name,
